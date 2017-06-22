@@ -32,6 +32,6 @@ class GridFieldSiteTreeEditButton extends GridFieldEditButton
             ['Link' => $record->CMSEditLink()]
         );
 
-        return $data->renderWith('SilverStripe\\Forms\\GridField\\GridFieldEditButton');
+        return $data->renderWith(GridFieldEditButton::class);
     }
 }

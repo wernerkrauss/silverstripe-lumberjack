@@ -1,9 +1,14 @@
 <?php
 
+namespace SilverStripe\Lumberjack\Tests;
+
 use SilverStripe\Core\Config\Config;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Dev\TestOnly;
+use SilverStripe\Lumberjack\Tests\Stub\SiteTree\LumberjackStub;
+use SilverStripe\Lumberjack\Tests\Stub\SiteTree\LumberjackHiddenStub;
+use SilverStripe\Lumberjack\Tests\Stub\SiteTree\LumberjackShownStub;
 
 class LumberjackTest extends SapphireTest
 {
@@ -16,28 +21,28 @@ class LumberjackTest extends SapphireTest
     /**
      * @var array
      */
-    protected $extraDataObjects = array(
-        'SiteTree_Lumberjack',
-        'SiteTree_LumberjackHidden',
-        'SiteTree_LumberjackShown',
-    );
+    protected static $extra_dataobjects = [
+        LumberjackStub::class,
+        LumberjackHiddenStub::class,
+        LumberjackShownStub::class,
+    ];
 
     public function testGetExcludedSiteTreeClassNames()
     {
-        $standard = $this->objFromFixture('SiteTree_Lumberjack', 'standard');
+        $standard = $this->objFromFixture(LumberjackStub::class, 'standard');
 
         $excluded = $standard->getExcludedSiteTreeClassNames();
-        $excluded = $this->filteredClassNames($excluded, $this->extraDataObjects);
-        $this->assertEquals($excluded, array('SiteTree_LumberjackHidden' => 'SiteTree_LumberjackHidden'));
+        $excluded = $this->filteredClassNames($excluded, self::$extra_dataobjects);
+        $this->assertEquals($excluded, array(LumberjackHiddenStub::class => LumberjackHiddenStub::class));
 
-        Config::inst()->update('SilverStripe\\CMS\\Model\\SiteTree', 'show_in_sitetree', false);
+        Config::modify()->set(SiteTree::class, 'show_in_sitetree', false);
         $excluded = $standard->getExcludedSiteTreeClassNames();
-        $excluded = $this->filteredClassNames($excluded, $this->extraDataObjects);
+        $excluded = $this->filteredClassNames($excluded, self::$extra_dataobjects);
         $this->assertEquals(
             $excluded,
             array(
-                'SiteTree_Lumberjack'       => 'SiteTree_Lumberjack',
-                'SiteTree_LumberjackHidden' => 'SiteTree_LumberjackHidden'
+                LumberjackStub::class       => LumberjackStub::class,
+                LumberjackHiddenStub::class => LumberjackHiddenStub::class
             )
         );
     }
@@ -57,19 +62,4 @@ class LumberjackTest extends SapphireTest
         });
         return $classNames;
     }
-}
-
-class SiteTree_Lumberjack extends SiteTree implements TestOnly
-{
-    private static $extensions = ['\\SilverStripe\\Lumberjack\\Model\\Lumberjack'];
-}
-
-class SiteTree_LumberjackHidden extends SiteTree_Lumberjack implements TestOnly
-{
-    private static $show_in_sitetree = false;
-}
-
-class SiteTree_LumberjackShown extends SiteTree_LumberjackHidden implements TestOnly
-{
-    private static $show_in_sitetree = true;
 }
