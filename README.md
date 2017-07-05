@@ -33,10 +33,13 @@ In this example we have a `NewsHolder` page which is the root of our news sectio
 <?php
 
 use Page;
+use SilverStripe\Lumberjack\Model\Lumberjack;
 
 class NewsHolder extends Page
 {
-    private static $extensions = ['SilverStripe\\Lumberjack\\Model\\Lumberjack'];
+    private static $extensions = [
+        Lumberjack::class,
+    ];
 
     private static $allowed_children = [
         'NewsArticle',
