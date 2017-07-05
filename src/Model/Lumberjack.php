@@ -73,7 +73,7 @@ class Lumberjack extends SiteTreeExtension
      */
     public function stageChildren($showAll = false)
     {
-        $baseClass = ClassInfo::baseDataClass($this->owner->class);
+        $baseClass = $this->owner->baseClass();
         $staged = $baseClass::get()
             ->filter('ParentID', (int)$this->owner->ID)
             ->exclude('ID', (int)$this->owner->ID);
@@ -99,7 +99,7 @@ class Lumberjack extends SiteTreeExtension
      */
     public function liveChildren($showAll = false, $onlyDeletedFromStage = false)
     {
-        $baseClass = ClassInfo::baseDataClass($this->owner->class);
+        $baseClass = $this->owner->baseClass();
         $children = $baseClass::get()
             ->filter('ParentID', (int)$this->owner->ID)
             ->exclude('ID', (int)$this->owner->ID)
