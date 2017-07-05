@@ -5,13 +5,12 @@ namespace SilverStripe\Lumberjack\Forms;
 use SilverStripe\CMS\Controllers\CMSPageAddController;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
-use SilverStripe\Control\Director;
+use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldAddNewButton;
-use SilverStripe\Forms\GridField\GridFieldComponent;
 use SilverStripe\Forms\GridField\GridField_FormAction;
 use SilverStripe\Forms\GridField\GridField_ActionProvider;
 use SilverStripe\Forms\HiddenField;
@@ -29,9 +28,7 @@ use SilverStripe\View\Requirements;
  *
  * @author Michael Strong <mstrong@silverstripe.org>
  */
-class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements
-    GridField_ActionProvider,
-    GridFieldComponent
+class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements GridField_ActionProvider
 {
     /**
      * Determine the list of classnames and titles allowed for a given parent object
@@ -140,7 +137,9 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements
      * @param string $actionName
      * @param mixed $arguments
      * @param array $data
-    **/
+     *
+     * @return HTTPResponse|null
+     */
     public function handleAction(GridField $gridField, $actionName, $arguments, $data)
     {
         if ($actionName == 'add') {
@@ -153,20 +152,19 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements
                 'PageType' => $tmpData['pageType']
             );
 
+            /** @var $controller CMSPageAddController */
             $controller = Injector::inst()->create(CMSPageAddController::class);
+
+            // pass current request to newly created controller
+            $request = Controller::curr()->getRequest();
+            $controller->setRequest($request);
 
             $form = $controller->AddForm();
             $form->loadDataFrom($data);
 
-            $controller->doAdd($data, $form);
-            $response = $controller->getResponseNegotiator()->getResponse();
-
-            // Get the current record
-            $record = SiteTree::get()->byId($controller->currentPageID());
-            if ($record) {
-                $response->redirect($record->CMSEditLink(), 301);
-            }
-            return $response;
+            return $controller->doAdd($data, $form);
         }
+
+        return null;
     }
 }
