@@ -71,14 +71,22 @@ class Lumberjack extends SiteTreeExtension
             $staged = $staged->filter('ShowInMenus', 1);
         }
         $this->owner->extend("augmentStageChildren", $staged, $showAll);
-
-        if ($this->shouldFilter()) {
-            // Filter the SiteTree
-            return $staged->exclude("ClassName", $this->owner->getExcludedSiteTreeClassNames());
-        }
+        $this->excludeSiteTreeClassNames($staged);
         return $staged;
     }
 
+    /**
+     * Excludes any hidden owner subclasses
+     * @param DataList $list
+     */
+    public function excludeSiteTreeClassNames($list)
+    {
+        $classNames = $this->owner->getExcludedSiteTreeClassNames();
+        if ($this->shouldFilter() && count($classNames)) {
+            // Filter the SiteTree
+            $list->exclude('ClassName', $classNames);
+        }
+    }
 
     /**
      * Augments (@link Hierarchy::liveChildren()} by hiding excluded child classnames
@@ -102,11 +110,8 @@ class Lumberjack extends SiteTreeExtension
         if (!$showAll) {
             $children = $children->filter('ShowInMenus', 1);
         }
+        $this->excludeSiteTreeClassNames($children);
 
-        if ($this->shouldFilter()) {
-            // Filter the SiteTree
-            return $children->exclude("ClassName", $this->owner->getExcludedSiteTreeClassNames());
-        }
         return $children;
     }
 
