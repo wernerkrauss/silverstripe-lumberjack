@@ -2,6 +2,7 @@
 
 namespace SilverStripe\Lumberjack\Forms;
 
+use SilverStripe\Core\Injector\Injectable;
 use SilverStripe\Forms\GridField\GridField_ColumnProvider;
 
 /**
@@ -14,6 +15,8 @@ use SilverStripe\Forms\GridField\GridField_ColumnProvider;
 **/
 class GridFieldSiteTreeState implements GridField_ColumnProvider
 {
+    use Injectable;
+
     public function augmentColumns($gridField, &$columns)
     {
         // Ensure Actions always appears as the last column.
