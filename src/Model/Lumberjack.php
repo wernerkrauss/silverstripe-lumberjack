@@ -100,13 +100,21 @@ class Lumberjack extends SiteTreeExtension
         }
 
         $this->owner->extend("augmentStageChildren", $staged, $showAll);
-
-        if ($this->shouldFilter()) {
-            // Filter the SiteTree
-            return $staged->exclude('ClassName', $this->owner->getExcludedSiteTreeClassNames());
-        }
-
+        $this->excludeSiteTreeClassNames($staged);
         return $staged;
+    }
+
+    /**
+     * Excludes any hidden owner subclasses
+     * @param DataList $list
+     */
+    protected function excludeSiteTreeClassNames($list)
+    {
+        $classNames = $this->owner->getExcludedSiteTreeClassNames();
+        if ($this->shouldFilter() && count($classNames)) {
+            // Filter the SiteTree
+            $list->exclude('ClassName', $classNames);
+        }
     }
 
     /**
@@ -148,11 +156,7 @@ class Lumberjack extends SiteTreeExtension
         if (!$showAll && DataObject::getSchema()->fieldSpec($this->owner, 'ShowInMenus')) {
             $children = $children->filter('ShowInMenus', 1);
         }
-
-        if ($this->shouldFilter()) {
-            // Filter the SiteTree
-            return $children->exclude('ClassName', $this->owner->getExcludedSiteTreeClassNames());
-        }
+        $this->excludeSiteTreeClassNames($children);
 
         return $children;
     }
@@ -188,6 +192,8 @@ class Lumberjack extends SiteTreeExtension
 
     /**
      * Checks if we're on a controller where we should filter. ie. Are we loading the SiteTree?
+     * NB: This only checks the current controller. See https://github.com/silverstripe/silverstripe-lumberjack/pull/60
+     * for a discussion around this.
      *
      * @return bool
      */
