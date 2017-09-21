@@ -79,7 +79,7 @@ class Lumberjack extends SiteTreeExtension
      * Excludes any hidden owner subclasses
      * @param DataList $list
      */
-    public function excludeSiteTreeClassNames($list)
+    protected function excludeSiteTreeClassNames($list)
     {
         $classNames = $this->owner->getExcludedSiteTreeClassNames();
         if ($this->shouldFilter() && count($classNames)) {
@@ -147,6 +147,8 @@ class Lumberjack extends SiteTreeExtension
 
     /**
      * Checks if we're on a controller where we should filter. ie. Are we loading the SiteTree?
+     * NB: This only checks the current controller. See https://github.com/silverstripe/silverstripe-lumberjack/pull/60
+     * for a discussion around this.
      *
      * @return bool
      */
