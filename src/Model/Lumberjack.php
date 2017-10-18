@@ -177,7 +177,7 @@ class Lumberjack extends SiteTreeExtension
             return $this->owner->getLumberjackTitle();
         }
 
-        return _t('Lumberjack.TabTitle', 'Child Pages');
+        return _t(__CLASS__ . '.TabTitle', 'Child Pages');
     }
 
     /**

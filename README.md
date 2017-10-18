@@ -1,7 +1,11 @@
 # SilverStripe Lumberjack
 
-[![Build Status](https://travis-ci.org/silverstripe/silverstripe-lumberjack.svg?branch=1.1)](https://travis-ci.org/silverstripe/silverstripe-lumberjack) [![Latest Stable Version](https://poser.pugx.org/silverstripe/lumberjack/v/stable)](https://packagist.org/packages/silverstripe/lumberjack) [![Latest Unstable Version](https://poser.pugx.org/silverstripe/lumberjack/v/unstable)](https://packagist.org/packages/silverstripe/lumberjack) [![License](https://poser.pugx.org/silverstripe/lumberjack/license)](https://packagist.org/packages/silverstripe/lumberjack)
-![helpfulrobot](https://helpfulrobot.io/silverstripe/lumberjack/badge)
+[![Build Status](https://travis-ci.org/silverstripe/silverstripe-lumberjack.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-lumberjack)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/?branch=master)
+[![Code coverage](https://codecov.io/gh/silverstripe/silverstripe-lumberjack/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-lumberjack)
+[![Latest Stable Version](https://poser.pugx.org/silverstripe/lumberjack/v/stable)](https://packagist.org/packages/silverstripe/lumberjack)
+[![Latest Unstable Version](https://poser.pugx.org/silverstripe/lumberjack/v/unstable)](https://packagist.org/packages/silverstripe/lumberjack)
+[![License](https://poser.pugx.org/silverstripe/lumberjack/license)](https://packagist.org/packages/silverstripe/lumberjack)
 
 A module to make managing pages in a GridField easy without losing any of the functionality that you're used to in the CMS.
 
