@@ -42,13 +42,13 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
             if ($record->hasMethod('isPublished')) {
                 $modifiedLabel = '';
                 if ($record->isModifiedOnStage) {
-                    $modifiedLabel = "<span class='modified'>" . _t('GridFieldSiteTreeState.Modified', 'Modified') . '</span>';
+                    $modifiedLabel = "<span class='modified'>" . _t(__CLASS__ . '.Modified', 'Modified') . '</span>';
                 }
 
                 $published = $record->isPublished();
                 if (!$published) {
                     return _t(
-                        'GridFieldSiteTreeState.Draft',
+                        __CLASS__ . '.Draft',
                         '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Saved as Draft on {date}',
                         'State for when a post is saved.',
                         array(
@@ -57,7 +57,7 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
                     );
                 }
                 return _t(
-                    'GridFieldSiteTreeState.Published',
+                    __CLASS__ . '.Published',
                     '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Published on {date}',
                     'State for when a post is published.',
                     array(
@@ -88,7 +88,7 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
     {
         switch ($columnName) {
             case 'State':
-                return array('title' => _t('GridFieldSiteTreeState.StateTitle', 'State', 'Column title for state'));
+                return array('title' => _t(__CLASS__ . '.StateTitle', 'State', 'Column title for state'));
             default:
                 break;
         }

@@ -82,7 +82,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
 
             if (!$this->buttonName) {
                 $this->buttonName = _t(
-                    'GridFieldSiteTreeAddNewButton.AddMultipleOptions',
+                    __CLASS__ . '.AddMultipleOptions',
                     'Add new',
                     'Add button text for multiple options.'
                 );
@@ -95,7 +95,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
 
             if (!$this->buttonName) {
                 $this->buttonName = _t(
-                    'GridFieldSiteTreeAddNewButton.Add',
+                    __CLASS__ . '.Add',
                     'Add new {name}',
                     'Add button text for a single option.',
                     ['name' => $children[$keys[0]]]
@@ -108,13 +108,13 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
             ->setAttribute('data-icon', 'add')
             ->addExtraClass('no-ajax btn btn-primary font-icon-plus');
 
-        $forTemplate = ArrayData::create([]);
+        $forTemplate = ArrayData::create();
         $forTemplate->Fields = ArrayList::create();
         $forTemplate->Fields->push($pageTypes);
         $forTemplate->Fields->push($addAction);
 
-        Requirements::css(LUMBERJACK_DIR . '/css/lumberjack.css');
-        Requirements::javascript(LUMBERJACK_DIR . '/javascript/GridField.js');
+        Requirements::css('silverstripe/lumberjack:css/lumberjack.css');
+        Requirements::javascript('silverstripe/lumberjack:javascript/GridField.js');
 
         return [$this->targetFragment => $forTemplate->renderWith(__CLASS__)];
     }
