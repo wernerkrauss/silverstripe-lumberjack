@@ -3,9 +3,9 @@ ru:
     Add: 'Добавить {name}'
     AddMultipleOptions: Добавить
   GridFieldSiteTreeState:
-    Draft: '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Сохранено как черновик {date}'
+    Draft: '<i class="font-icon-pencil btn--icon-md"></i> Сохранено как черновик {date}'
     Modified: Изменено
-    Published: '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Опубликовано {date}'
+    Published: '<i class="font-icon-check-mark-circle btn--icon-md"></i> Опубликовано {date}'
     StateTitle: Статус
   Lumberjack:
     TabTitle: Под-страницы

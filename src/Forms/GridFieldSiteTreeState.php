@@ -42,14 +42,14 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
             if ($record->hasMethod('isPublished')) {
                 $modifiedLabel = '';
                 if ($record->isModifiedOnStage) {
-                    $modifiedLabel = "<span class='modified'>" . _t(__CLASS__ . '.Modified', 'Modified') . '</span>';
+                    $modifiedLabel = '<span class="modified">' . _t(__CLASS__ . '.Modified', 'Modified') . '</span>';
                 }
 
                 $published = $record->isPublished();
                 if (!$published) {
                     return _t(
                         __CLASS__ . '.Draft',
-                        '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Saved as Draft on {date}',
+                        '<i class="font-icon-pencil btn--icon-md"></i> Saved as Draft on {date}',
                         'State for when a post is saved.',
                         array(
                             'date' => $record->dbObject('LastEdited')->Nice()
@@ -58,7 +58,7 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
                 }
                 return _t(
                     __CLASS__ . '.Published',
-                    '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Published on {date}',
+                    '<i class="font-icon-check-mark-circle btn--icon-md"></i> Published on {date}',
                     'State for when a post is published.',
                     array(
                         'date' => $record->dbObject('LastEdited')->Nice()

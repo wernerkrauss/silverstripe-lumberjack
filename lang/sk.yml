@@ -3,9 +3,9 @@ sk:
     Add: 'Pridať {name}'
     AddMultipleOptions: Pridať
   GridFieldSiteTreeState:
-    Draft: '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Uložený ako koncept: {date}'
+    Draft: '<i class="font-icon-pencil btn--icon-md"></i> Uložený ako koncept: {date}'
     Modified: zmenené
-    Published: '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Publikovaný: {date}'
+    Published: '<i class="font-icon-check-mark-circle btn--icon-md"></i> Publikovaný: {date}'
     StateTitle: Stav
   Lumberjack:
     TabTitle: Podstránky
