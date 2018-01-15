@@ -28,9 +28,10 @@ class GridFieldSiteTreeEditButton extends GridFieldEditButton
         // No permission checks - handled through GridFieldDetailForm
         // which can make the form readonly if no edit permissions are available.
 
-        $data = ArrayData::create(
-            ['Link' => $record->CMSEditLink()]
-        );
+        $data = ArrayData::create([
+              'Link' => $record->CMSEditLink(),
+              'ExtraClass' => $this->getExtraClass()
+        ]);
 
         return $data->renderWith(GridFieldEditButton::class);
     }

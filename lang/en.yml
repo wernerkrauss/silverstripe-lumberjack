@@ -3,9 +3,9 @@ en:
     Add: 'Add new {name}'
     AddMultipleOptions: 'Add new'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
-    Draft: '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Saved as Draft on {date}'
+    Draft: 'Saved as Draft on {date}'
     Modified: Modified
-    Published: '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Published on {date}'
+    Published: 'Published on {date}'
     StateTitle: State
   SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: 'Child Pages'

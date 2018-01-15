@@ -1,11 +1,11 @@
 fi:
-  GridFieldSiteTreeAddNewButton:
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
     Add: 'Lisää uusi {name}'
     AddMultipleOptions: 'Lisää uusi'
-  GridFieldSiteTreeState:
-    Draft: '<i class="btn-icon gridfield-icon btn-icon-pencil"></i> Tallennettu luonnoksena {date}'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Draft: 'Tallennettu luonnoksena {date}'
     Modified: Muokattu
-    Published: '<i class="btn-icon gridfield-icon btn-icon-accept"></i> Julkaistu {date}'
+    Published: 'Julkaistu {date}'
     StateTitle: Tila
-  Lumberjack:
+  SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: Alasivut
