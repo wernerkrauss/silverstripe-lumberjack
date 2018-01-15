@@ -1,11 +1,11 @@
 sk:
-  GridFieldSiteTreeAddNewButton:
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
     Add: 'Pridať {name}'
     AddMultipleOptions: Pridať
-  GridFieldSiteTreeState:
-    Draft: '<i class="font-icon-pencil btn--icon-md"></i> Uložený ako koncept: {date}'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Draft: 'Uložený ako koncept: {date}'
     Modified: zmenené
-    Published: '<i class="font-icon-check-mark-circle btn--icon-md"></i> Publikovaný: {date}'
+    Published: 'Publikovaný: {date}'
     StateTitle: Stav
-  Lumberjack:
+  SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: Podstránky

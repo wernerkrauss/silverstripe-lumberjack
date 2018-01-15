@@ -47,18 +47,18 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
 
                 $published = $record->isPublished();
                 if (!$published) {
-                    return _t(
+                    return '<i class="font-icon-pencil btn--icon-md"></i>' .  _t(
                         __CLASS__ . '.Draft',
-                        '<i class="font-icon-pencil btn--icon-md"></i> Saved as Draft on {date}',
+                        'Saved as Draft on {date}',
                         'State for when a post is saved.',
                         array(
                             'date' => $record->dbObject('LastEdited')->Nice()
                         )
                     );
                 }
-                return _t(
+                return '<i class="font-icon-check-mark-circle btn--icon-md"></i>' . _t(
                     __CLASS__ . '.Published',
-                    '<i class="font-icon-check-mark-circle btn--icon-md"></i> Published on {date}',
+                    'Published on {date}',
                     'State for when a post is published.',
                     array(
                         'date' => $record->dbObject('LastEdited')->Nice()

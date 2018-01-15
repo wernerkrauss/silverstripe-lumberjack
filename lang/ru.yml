@@ -1,11 +1,11 @@
 ru:
-  GridFieldSiteTreeAddNewButton:
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
     Add: 'Добавить {name}'
     AddMultipleOptions: Добавить
-  GridFieldSiteTreeState:
-    Draft: '<i class="font-icon-pencil btn--icon-md"></i> Сохранено как черновик {date}'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Draft: 'Сохранено как черновик {date}'
     Modified: Изменено
-    Published: '<i class="font-icon-check-mark-circle btn--icon-md"></i> Опубликовано {date}'
+    Published: 'Опубликовано {date}'
     StateTitle: Статус
-  Lumberjack:
+  SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: Под-страницы
