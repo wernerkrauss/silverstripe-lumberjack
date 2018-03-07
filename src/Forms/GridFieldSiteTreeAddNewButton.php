@@ -75,7 +75,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
         } elseif (count($children) > 1) {
             $pageTypes = DropdownField::create('PageType', 'Page Type', $children, $parent->defaultChild());
             $pageTypes
-                ->setFieldHolderTemplate('GridFieldSiteTreeAddNewButton_holder')
+                ->setFieldHolderTemplate(__CLASS__ . '_holder')
                 ->addExtraClass('gridfield-dropdown no-change-track');
 
             $state->pageType = $parent->defaultChild();
