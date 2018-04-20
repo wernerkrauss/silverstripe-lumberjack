@@ -2,7 +2,9 @@
 
 namespace SilverStripe\Lumberjack\Forms;
 
+use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldEditButton;
+use SilverStripe\ORM\DataObject;
 use SilverStripe\View\ArrayData;
 
 /**
@@ -10,11 +12,8 @@ use SilverStripe\View\ArrayData;
  *
  * Bypasses GridFieldDetailForm
  *
- * @package silverstripe
- * @subpackage lumberjack
- *
  * @author Michael Strong <mstrong@silverstripe.org>
-**/
+ **/
 class GridFieldSiteTreeEditButton extends GridFieldEditButton
 {
     /**
@@ -29,8 +28,8 @@ class GridFieldSiteTreeEditButton extends GridFieldEditButton
         // which can make the form readonly if no edit permissions are available.
 
         $data = ArrayData::create([
-              'Link' => $record->CMSEditLink(),
-              'ExtraClass' => $this->getExtraClass()
+            'Link' => $record->CMSEditLink(),
+            'ExtraClass' => $this->getExtraClass(),
         ]);
 
         return $data->renderWith(GridFieldEditButton::class);

@@ -10,9 +10,6 @@ use SilverStripe\Forms\GridField\GridFieldPageCount;
 use SilverStripe\Forms\GridField\GridFieldPaginator;
 use SilverStripe\Forms\GridField\GridFieldSortableHeader;
 use SilverStripe\Forms\GridField\GridFieldToolbarHeader;
-use SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton;
-use SilverStripe\Lumberjack\Forms\GridFieldSiteTreeEditButton;
-use SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState;
 
 /**
  * GridField config necessary for managing a SiteTree object.
