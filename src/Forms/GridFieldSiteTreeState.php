@@ -41,7 +41,7 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
         if ($columnName == 'State') {
             if ($record->hasMethod('isPublished')) {
                 $modifiedLabel = '';
-                if ($record->isModifiedOnStage) {
+                if ($record->isModifiedOnDraft()) {
                     $modifiedLabel = '<span class="modified">' . _t(__CLASS__ . '.Modified', 'Modified') . '</span>';
                 }
 
