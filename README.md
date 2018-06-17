@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/silverstripe/silverstripe-lumberjack.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-lumberjack)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/?branch=master)
+[![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
 [![Code coverage](https://codecov.io/gh/silverstripe/silverstripe-lumberjack/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-lumberjack)
 
 A module to make managing pages in a GridField easy without losing any of the functionality that you're used to in the CMS.
