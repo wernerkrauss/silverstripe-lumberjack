@@ -91,7 +91,7 @@ class Lumberjack extends SiteTreeExtension
             $staged = $staged->exclude('ClassName', $hideFromHierarchy);
         }
 
-        if ($hideFromCMSTree && $this->showingCMSTree()) {
+        if ($hideFromCMSTree && $this->owner->showingCMSTree()) {
             $staged = $staged->exclude('ClassName', $hideFromCMSTree);
         }
 
@@ -153,7 +153,7 @@ class Lumberjack extends SiteTreeExtension
             $children = $children->exclude('ClassName', $hideFromHierarchy);
         }
 
-        if ($hideFromCMSTree && $this->showingCMSTree()) {
+        if ($hideFromCMSTree && $this->owner->showingCMSTree()) {
             $children = $children->exclude('ClassName', $hideFromCMSTree);
         }
 
