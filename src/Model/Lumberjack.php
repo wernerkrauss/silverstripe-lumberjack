@@ -44,6 +44,8 @@ class Lumberjack extends SiteTreeExtension
             }
         }
 
+        $this->owner->extend('updateSiteTreeExcludedClassNames', $classes);
+
         return $classes;
     }
 
