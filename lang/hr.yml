@@ -1,5 +1,5 @@
 hr:
-  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
     Add: 'Dodaj novi {name}'
     AddMultipleOptions: 'Dodaj novi'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:

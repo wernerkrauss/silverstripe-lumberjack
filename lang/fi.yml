@@ -1,5 +1,5 @@
 fi:
-  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
     Add: 'Lisää uusi {name}'
     AddMultipleOptions: 'Lisää uusi'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:

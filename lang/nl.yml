@@ -1,5 +1,5 @@
 nl:
-  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
     Add: 'Voeg nieuwe {name} toe'
     AddMultipleOptions: 'Voeg nieuwe toe'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
