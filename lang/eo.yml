@@ -1,5 +1,5 @@
 eo:
-  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
     Add: 'Enmeti novan {name}'
     AddMultipleOptions: 'Enmeti novan'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:

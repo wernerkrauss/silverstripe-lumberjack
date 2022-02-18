@@ -1,5 +1,5 @@
 ru:
-  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton::
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
     Add: 'Добавить {name}'
     AddMultipleOptions: Добавить
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
