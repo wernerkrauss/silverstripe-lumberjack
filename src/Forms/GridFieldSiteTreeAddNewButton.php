@@ -51,7 +51,10 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
                 // Note: Second argument to SiteTree::canCreate will support inherited permissions
                 // post 3.1.12, and will default to the old permission model in 3.1.11 or below
                 // See http://docs.silverstripe.org/en/changelogs/3.1.11
-                if ($instance->canCreate(null, array('Parent' => $parent)) && in_array($class, $nonHiddenPageTypes)) {
+                if (
+                    $instance->canCreate(null, array('Parent' => $parent)) &&
+                    in_array($class, $nonHiddenPageTypes ?? [])
+                ) {
                     $children[$class] = $instance->i18n_singular_name();
                 }
             }
@@ -72,7 +75,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
         $children = $this->getAllowedChildren($parent);
         if (empty($children)) {
             return array();
-        } elseif (count($children) > 1) {
+        } elseif (count($children ?? []) > 1) {
             $pageTypes = DropdownField::create('PageType', 'Page Type', $children, $parent->defaultChild());
             $pageTypes
                 ->setFieldHolderTemplate(__CLASS__ . '_holder')
@@ -88,7 +91,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
                 );
             }
         } else {
-            $keys = array_keys($children);
+            $keys = array_keys($children ?? []);
             $pageTypes = HiddenField::create('PageType', 'Page Type', $keys[0]);
 
             $state->pageType = $keys[0];
@@ -140,7 +143,7 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
     public function handleAction(GridField $gridField, $actionName, $arguments, $data)
     {
         if ($actionName == 'add') {
-            $tmpData = json_decode($data['ChildPages']['GridState'], true);
+            $tmpData = json_decode($data['ChildPages']['GridState'] ?? '', true);
             /** @skipUpgrade  */
             $tmpData = $tmpData['GridFieldSiteTreeAddNewButton'];
 
