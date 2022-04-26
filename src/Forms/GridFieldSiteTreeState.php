@@ -20,7 +20,7 @@ class GridFieldSiteTreeState implements GridField_ColumnProvider
     public function augmentColumns($gridField, &$columns)
     {
         // Ensure Actions always appears as the last column.
-        $key = array_search('Actions', $columns);
+        $key = array_search('Actions', $columns ?? []);
         if ($key !== false) {
             unset($columns[$key]);
         }

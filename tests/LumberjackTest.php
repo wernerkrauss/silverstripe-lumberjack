@@ -57,8 +57,8 @@ class LumberjackTest extends SapphireTest
      */
     protected function filteredClassNames($classNames, $explicitClassNames)
     {
-        $classNames = array_filter($classNames, function ($value) use ($explicitClassNames) {
-            return in_array($value, $explicitClassNames);
+        $classNames = array_filter($classNames ?? [], function ($value) use ($explicitClassNames) {
+            return in_array($value, $explicitClassNames ?? []);
         });
         return $classNames;
     }
