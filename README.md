@@ -1,6 +1,6 @@
 # SilverStripe Lumberjack
 
-[![Build Status](https://api.travis-ci.com/silverstripe/silverstripe-lumberjack.svg?branch=2)](https://travis-ci.com/silverstripe/silverstripe-lumberjack)
+[![CI](https://github.com/silverstripe/silverstripe-lumberjack/actions/workflows/ci.yml/badge.svg)](https://github.com/silverstripe/silverstripe-lumberjack/actions/workflows/ci.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/?branch=master)
 [![Code coverage](https://codecov.io/gh/silverstripe/silverstripe-lumberjack/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-lumberjack)
 
