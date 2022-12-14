@@ -116,7 +116,7 @@ class Lumberjack extends SiteTreeExtension
     protected function excludeSiteTreeClassNames($list)
     {
         $classNames = $this->owner->getExcludedSiteTreeClassNames();
-        if ($this->shouldFilter() && count($classNames)) {
+        if ($this->shouldFilter() && count($classNames ?? [])) {
             // Filter the SiteTree
             $list = $list->exclude('ClassName', $classNames);
         }

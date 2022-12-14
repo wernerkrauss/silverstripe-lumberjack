@@ -1,9 +1,7 @@
-# SilverStripe Lumberjack
+# Silverstripe Lumberjack
 
-[![Build Status](https://travis-ci.org/silverstripe/silverstripe-lumberjack.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-lumberjack)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-lumberjack/?branch=master)
-[![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
-[![Code coverage](https://codecov.io/gh/silverstripe/silverstripe-lumberjack/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-lumberjack)
+[![CI](https://github.com/silverstripe/silverstripe-lumberjack/actions/workflows/ci.yml/badge.svg)](https://github.com/silverstripe/silverstripe-lumberjack/actions/workflows/ci.yml)
+[![Silverstripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
 
 A module to make managing pages in a GridField easy without losing any of the functionality that you're used to in the CMS.
 
@@ -82,7 +80,6 @@ class NewsPage extends Page
 If `show_in_sitetree` is not explicitly defined on a class, then it will default to true. You can add this setting to
 core classes and modules using the YAML config system. It is **not** recommended to add the LumberJack extension to
 the `SiteTree` or `Page` class.
-
 
 ```yaml
 SilverStripe\Blog\Model\Blog:
