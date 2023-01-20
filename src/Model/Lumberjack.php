@@ -67,7 +67,7 @@ class Lumberjack extends SiteTreeExtension
             );
 
             $tab = Tab::create('ChildPages', $this->getLumberjackTitle(), $gridField);
-            $fields->insertAfter($tab, 'Main');
+            $fields->insertAfter('Main', $tab);
         }
     }
 
