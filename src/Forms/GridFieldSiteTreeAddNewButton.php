@@ -144,7 +144,6 @@ class GridFieldSiteTreeAddNewButton extends GridFieldAddNewButton implements Gri
     {
         if ($actionName == 'add') {
             $tmpData = json_decode($data['ChildPages']['GridState'] ?? '', true);
-            /** @skipUpgrade  */
             $tmpData = $tmpData['GridFieldSiteTreeAddNewButton'];
 
             $data = array(
