@@ -7,3 +7,11 @@ fa_IR:
     StateTitle: وضیعت
   SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: 'صفحات زیرین'
+  GridFieldSiteTreeAddNewButton:
+    Add: 'افزودن {name} جدید'
+    AddMultipleOptions: 'افزودن جدید'
+  GridFieldSiteTreeState:
+    Modified: 'اصلاح شده'
+    StateTitle: وضیعت
+  Lumberjack:
+    TabTitle: 'صفحات زیرین'
