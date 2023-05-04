@@ -9,13 +9,9 @@ This is intended to be used in cases where the SiteTree grows beyond a manageabl
 
 This module was born out of and decoupled from [micmania1/silverstripe-blog](https://github.com/micmania1/silverstripe-blogger).
 
-## Requirements
-
-* silverstripe/cms: 4.0+
-
 ## Installation
 
-```bash
+```sh
 composer require silverstripe/lumberjack
 ```
 
