@@ -9,3 +9,11 @@ pl:
     StateTitle: Stan
   Lumberjack:
     TabTitle: Podstrony
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
+    Add: 'Dodaj nową {name}'
+    AddMultipleOptions: 'Dodaj nową'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Modified: Zmodyfikowano
+    StateTitle: Stan
+  SilverStripe\Lumberjack\Model\Lumberjack:
+    TabTitle: Podstrony
