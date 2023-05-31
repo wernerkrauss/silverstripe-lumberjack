@@ -9,3 +9,11 @@ it:
     StateTitle: Stato
   Lumberjack:
     TabTitle: 'Pagine Figlio'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
+    Add: 'Aggiungi nuovo {name}'
+    AddMultipleOptions: 'Aggiungi nuovo'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Modified: Modificato
+    StateTitle: Stato
+  SilverStripe\Lumberjack\Model\Lumberjack:
+    TabTitle: 'Pagine Figlio'

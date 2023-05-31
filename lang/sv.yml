@@ -9,3 +9,11 @@ sv:
     StateTitle: Status
   Lumberjack:
     TabTitle: Undersidor
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
+    Add: 'Lägg till {name}'
+    AddMultipleOptions: 'Lägg till'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Modified: Ändrad
+    StateTitle: Status
+  SilverStripe\Lumberjack\Model\Lumberjack:
+    TabTitle: Undersidor

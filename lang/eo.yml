@@ -3,9 +3,9 @@ eo:
     Add: 'Enmeti novan {name}'
     AddMultipleOptions: 'Enmeti novan'
   SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
-    Draft: 'konserviĝis kiel malneto je {date}'
+    Draft: 'Konservita kiel malneta je {date}'
     Modified: Ŝanĝita
-    Published: 'publikiĝis je {date}'
+    Published: 'Publikigita je {date}'
     StateTitle: Stato
   SilverStripe\Lumberjack\Model\Lumberjack:
     TabTitle: 'Idoj de paĝoj'
