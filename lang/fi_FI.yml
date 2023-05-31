@@ -9,3 +9,11 @@ fi_FI:
     StateTitle: Tila
   Lumberjack:
     TabTitle: Alasivut
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeAddNewButton:
+    Add: 'Lisää uusi {name}'
+    AddMultipleOptions: 'Lisää uusi'
+  SilverStripe\Lumberjack\Forms\GridFieldSiteTreeState:
+    Modified: Muokattu
+    StateTitle: Tila
+  SilverStripe\Lumberjack\Model\Lumberjack:
+    TabTitle: Alasivut
