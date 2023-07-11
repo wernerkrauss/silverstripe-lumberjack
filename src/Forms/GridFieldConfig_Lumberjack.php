@@ -40,5 +40,7 @@ class GridFieldConfig_Lumberjack extends GridFieldConfig
         $this->addComponent(new GridFieldSiteTreeState());
 
         $pagination->setThrowExceptionOnBadDataType(true);
+
+        $this->extend('updateConfig');
     }
 }
